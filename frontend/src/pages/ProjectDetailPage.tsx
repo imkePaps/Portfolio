@@ -16,7 +16,9 @@ function ProjectDetailPage() {
   if (!project) {
     return (
       <Section>
-        <h1>Project not found</h1>
+        <div className={styles.notFound}>
+          <h1>Project not found</h1>
+        </div>
       </Section>
     );
   }
@@ -25,40 +27,86 @@ function ProjectDetailPage() {
     <Section>
       <div className={styles.container}>
         <span className={styles.label}>
-          PROJECT
+          Project
         </span>
 
-        <h1>{project.title}</h1>
+        <h1 className={styles.title}>
+          {project.title}
+        </h1>
 
         <p className={styles.description}>
           {project.longDescription}
         </p>
 
-        <div className={styles.techStack}>
-          {project.technologies.map(
-            (tech) => (
-              <span key={tech}>
-                {tech}
-              </span>
-            )
-          )}
-        </div>
+        {/* TECH STACK */}
+        {project.technologies && (
+          <div className={styles.techStack}>
+            {project.technologies.map(
+              (tech) => (
+                <span key={tech}>
+                  {tech}
+                </span>
+              )
+            )}
+          </div>
+        )}
 
-        <div className={styles.actions}>
-          <a
-            href={project.github}
-            target="_blank"
-          >
-            GitHub
-          </a>
+        {/* IMAGE GALLERY */}
+        {project.images && (
+          <div className={styles.gallery}>
+            {project.images.map(
+              (image) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt={project.title}
+                />
+              )
+            )}
+          </div>
+        )}
 
-          <a
-            href={project.live}
-            target="_blank"
+        {/* VIDEO */}
+        {project.video && (
+          <video
+            className={styles.video}
+            autoPlay
+            muted
+            loop
+            playsInline
           >
-            Live Demo
-          </a>
-        </div>
+            <source
+              src={project.video}
+              type="video/mp4"
+            />
+          </video>
+        )}
+
+        {/* ACTIONS */}
+        {(project.github ||
+          project.live) && (
+          <div className={styles.actions}>
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            )}
+
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Demo
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </Section>
   );

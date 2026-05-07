@@ -6,6 +6,7 @@ import ContactSection from "../components/ContactSection/ContactSection";
 import Footer from "../components/Footer/Footer";
 
 import FadeIn from "../components/FadeIn/FadeIn";
+import ExperienceSection from "../components/ExperienceSection/ExperienceSection";
 
 function HomePage() {
   return (
@@ -22,6 +23,10 @@ function HomePage() {
 
       <FadeIn delay={0.15}>
         <SkillsSection />
+      </FadeIn>
+
+      <FadeIn delay={0.2}>
+        <ExperienceSection />
       </FadeIn>
 
       <FadeIn delay={0.2}>

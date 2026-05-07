@@ -19,14 +19,11 @@ function Hero() {
           </p>
 
           <h2 className={styles.title}>
-            Crafting modern digital experiences with motion, interaction and
-            clean design.
+            Building scalable digital products with modern frontend experiences and robust backend architecture.
           </h2>
 
           <p className={styles.description}>
-            I build responsive and interactive web applications focused on
-            premium UI, smooth user experience and scalable frontend
-            architecture.
+            Fullstack developer focused on high-performance applications, intuitive user experiences and scalable software systems.
           </p>
 
           <div className={styles.actions}>
