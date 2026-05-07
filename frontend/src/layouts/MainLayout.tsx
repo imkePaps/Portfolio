@@ -22,9 +22,7 @@ function MainLayout({ children }: Props) {
 
       <Navbar />
 
-      <main className={styles.main}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }

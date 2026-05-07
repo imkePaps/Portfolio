@@ -3,7 +3,7 @@
   --color-background: #0f0f11;
   --color-surface: #17171a;
   --color-surface-light: rgba(255, 255, 255, 0.03);
-  
+
   /* TEXT */
   --color-text: #ffffff;
   --color-text-secondary: rgba(255, 255, 255, 0.7);
@@ -16,11 +16,9 @@
 
   --letter-spacing-heading: -0.04em;
 
-  --shadow-soft:
-    0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
 
-  --shadow-glow:
-    0 0 80px rgba(125, 211, 252, 0.08);
+  --shadow-glow: 0 0 80px rgba(125, 211, 252, 0.08);
 
   /* BORDERS */
   --color-border: rgba(255, 255, 255, 0.08);
@@ -51,8 +49,8 @@
   --space-lg: 48px;
   --space-xl: 80px;
   --space-2xl: 120px;
-  
-    /* BREAKPOINTS */
+
+  /* BREAKPOINTS */
   --breakpoint-tablet: 768px;
   --breakpoint-mobile: 480px;
 }

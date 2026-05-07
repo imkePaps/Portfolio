@@ -1,37 +1,53 @@
+import { useState } from "react";
+
 import Button from "../Button/Button";
+import ContactModal from "../ContactModal/ContactModal";
+import Magnetic from "../Magnetic/Magnetic";
 import Section from "../Section/Section";
 
 import styles from "./Hero.module.css";
 
 function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <Section className={styles.heroSection} id="home">
-      <div className={styles.hero}>
-        <p className={styles.subtitle}>
-          FULLSTACK DEVELOPER
-        </p>
+    <>
+      <Section id="home" className={styles.hero}>
+        <div className={styles.content}>
+          <span className={styles.eyebrow}>Frontend Developer</span>
 
-        <h1 className={styles.title}>
-          Building modern web experiences with{" "}
-          <span>React</span> & .NET
-        </h1>
+          <h1 className={styles.title}>
+            Crafting modern digital experiences with motion, interaction and
+            clean design.
+          </h1>
 
-        <p className={styles.description}>
-          Portfolio focused on frontend experiences,
-          scalable architecture, and modern
-          fullstack development.
-        </p>
+          <p className={styles.description}>
+            I build responsive and interactive web applications focused on
+            premium UI, smooth user experience and scalable frontend
+            architecture.
+          </p>
 
-        <div className={styles.actions}>
-          <Button text="View Projects" />
+          <div className={styles.actions}>
+            <Magnetic>
+              <a href="#projects">
+                <Button text="View Projects" />
+              </a>
+            </Magnetic>
 
-          <Button
-            text="Contact Me"
-            variant="secondary"
-          />
+            <Magnetic>
+              <div onClick={() => setIsModalOpen(true)}>
+                <Button text="Get In Touch" variant="secondary" />
+              </div>
+            </Magnetic>
+          </div>
         </div>
-      </div>
-    </Section>
+      </Section>
+
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 }
 

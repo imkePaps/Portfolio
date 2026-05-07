@@ -11,34 +11,22 @@ type Props = {
   scale?: number;
 };
 
-function FloatingOrb({
-  position,
-  color,
-  speed = 0.4,
-  scale = 1,
-}: Props) {
+function FloatingOrb({ position, color, speed = 0.4, scale = 1 }: Props) {
   const meshRef = useRef<Mesh>(null!);
 
   useFrame((state) => {
     const time = state.clock.elapsedTime;
 
-    meshRef.current.position.y =
-      position[1] +
-      Math.sin(time * speed) * 0.2;
+    meshRef.current.position.y = position[1] + Math.sin(time * speed) * 0.2;
 
     meshRef.current.position.x =
-      position[0] +
-      Math.cos(time * speed * 0.7) * 0.15;
+      position[0] + Math.cos(time * speed * 0.7) * 0.15;
 
     meshRef.current.rotation.y += 0.0015;
   });
 
   return (
-    <mesh
-      ref={meshRef}
-      position={position}
-      scale={scale}
-    >
+    <mesh ref={meshRef} position={position} scale={scale}>
       <sphereGeometry args={[1, 64, 64]} />
 
       <meshStandardMaterial

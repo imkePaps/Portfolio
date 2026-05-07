@@ -8,16 +8,9 @@ type Props = {
   id?: string;
 };
 
-function Section({
-  children,
-  className = "",
-  id,
-}: Props) {
+function Section({ children, className = "", id }: Props) {
   return (
-    <section
-      id={id}
-      className={`${styles.section} ${className}`}
-    >
+    <section id={id} className={`${styles.section} ${className}`}>
       {children}
     </section>
   );

@@ -8,21 +8,13 @@ type Props = {
   tech: string[];
 };
 
-function ProjectCard({
-  title,
-  description,
-  tech,
-}: Props) {
-  const cardRef =
-    useRef<HTMLDivElement | null>(null);
+function ProjectCard({ title, description, tech }: Props) {
+  const cardRef = useRef<HTMLDivElement | null>(null);
 
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLDivElement>
-  ) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
 
-    const rect =
-      cardRef.current.getBoundingClientRect();
+    const rect = cardRef.current.getBoundingClientRect();
 
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -40,15 +32,9 @@ function ProjectCard({
       translateY(-6px)
     `;
 
-    cardRef.current.style.setProperty(
-      "--mouse-x",
-      `${x}px`
-    );
+    cardRef.current.style.setProperty("--mouse-x", `${x}px`);
 
-    cardRef.current.style.setProperty(
-      "--mouse-y",
-      `${y}px`
-    );
+    cardRef.current.style.setProperty("--mouse-y", `${y}px`);
   };
 
   const handleMouseLeave = () => {

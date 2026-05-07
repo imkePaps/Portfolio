@@ -10,8 +10,20 @@
   border-bottom: 1px solid var(--color-border);
 
   background: rgba(15, 15, 17, 0.95);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
 }
+.scrolled {
+  background: rgba(15, 15, 17, 0.75);
 
+  backdrop-filter: blur(20px);
+
+  border-color: rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
 .container {
   max-width: var(--container-width);
   height: 72px;
