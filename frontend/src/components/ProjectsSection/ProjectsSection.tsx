@@ -1,30 +1,9 @@
 import { motion } from "framer-motion";
-
 import Section from "../Section/Section";
 import ProjectCard from "../ProjectCard/ProjectCard";
-
 import styles from "./ProjectsSection.module.css";
-
-const projects = [
-  {
-    title: "Portfolio Website",
-    description:
-      "Modern portfolio built with React, Framer Motion, and scalable frontend architecture.",
-    tech: ["React", "TypeScript", "Framer Motion"],
-  },
-  {
-    title: "Business Dashboard",
-    description:
-      "Analytics dashboard with modern UI systems, reusable components, and API integrations.",
-    tech: ["React", ".NET", "REST API"],
-  },
-  {
-    title: "Creative Web Experience",
-    description:
-      "Interactive frontend experience focused on animations, visual polish, and performance.",
-    tech: ["Three.js", "React", "CSS Modules"],
-  },
-];
+import { Link } from "react-router-dom";
+import { projects } from "../../data/projects";
 
 function ProjectsSection() {
   return (
@@ -72,11 +51,13 @@ function ProjectsSection() {
               ease: "easeOut",
             }}
           >
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              tech={project.tech}
-            />
+            <Link to={`/projects/${project.slug}`}>
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tech={project.technologies}
+              />
+            </Link>
           </motion.div>
         ))}
       </motion.div>

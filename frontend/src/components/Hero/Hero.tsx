@@ -14,12 +14,14 @@ function Hero() {
     <>
       <Section id="home" className={styles.hero}>
         <div className={styles.content}>
-          <span className={styles.eyebrow}>Frontend Developer</span>
+          <p className={styles.subtitle}>
+            FULLSTACK DEVELOPER
+          </p>
 
-          <h1 className={styles.title}>
+          <h2 className={styles.title}>
             Crafting modern digital experiences with motion, interaction and
             clean design.
-          </h1>
+          </h2>
 
           <p className={styles.description}>
             I build responsive and interactive web applications focused on

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 function Navbar() {
@@ -8,6 +8,9 @@ function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  const isProjectPage = location.pathname.includes("/projects/");
 
   /* ACTIVE SECTION */
   useEffect(() => {
@@ -56,43 +59,69 @@ function Navbar() {
         className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}
       >
         <div className={styles.container}>
-          <h1 className={styles.logo}>Imke</h1>
+          <h1 className={styles.logo}>Imke Paps</h1>
 
           <nav className={styles.links}>
-            <a
-              href="#home"
-              className={activeSection === "home" ? styles.activeLink : ""}
-            >
-              Home
-            </a>
+            {isProjectPage ? (
+              <a href="/">Back Home</a>
+            ) : (
+              <>
+                <a
+                  href="#home"
+                  className={
+                    activeSection === "home"
+                      ? styles.activeLink
+                      : ""
+                  }
+                >
+                  Home
+                </a>
 
-            <a
-              href="#projects"
-              className={activeSection === "projects" ? styles.activeLink : ""}
-            >
-              Projects
-            </a>
+                <a
+                  href="#projects"
+                  className={
+                    activeSection === "projects"
+                      ? styles.activeLink
+                      : ""
+                  }
+                >
+                  Projects
+                </a>
 
-            <a
-              href="#about"
-              className={activeSection === "about" ? styles.activeLink : ""}
-            >
-              About
-            </a>
+                <a
+                  href="#about"
+                  className={
+                    activeSection === "about"
+                      ? styles.activeLink
+                      : ""
+                  }
+                >
+                  About
+                </a>
 
-            <a
-              href="#skills"
-              className={activeSection === "skills" ? styles.activeLink : ""}
-            >
-              Skills
-            </a>
+                <a
+                  href="#skills"
+                  className={
+                    activeSection === "skills"
+                      ? styles.activeLink
+                      : ""
+                  }
+                >
+                  Skills
+                </a>
 
-            <a
-              href="#contact"
-              className={activeSection === "contact" ? styles.activeLink : ""}
-            >
-              Contact
-            </a>
+                <a
+                  href="#contact"
+                  className={
+                    activeSection === "contact"
+                      ? styles.activeLink
+                      : ""
+                  }
+                >
+                  Contact
+                </a>
+              </>
+            )}
           </nav>
 
           <button
@@ -116,47 +145,76 @@ function Navbar() {
           isOpen ? styles.mobileMenuOpen : ""
         }`}
       >
-        <a
-          href="#home"
-          className={activeSection === "home" ? styles.activeMobileLink : ""}
-          onClick={() => setIsOpen(false)}
-        >
-          Home
-        </a>
+        {isProjectPage ? (
+          <a
+            href="/"
+            onClick={() => setIsOpen(false)}
+          >
+            Back Home
+          </a>
+        ) : (
+          <>
+            <a
+              href="#home"
+              className={
+                activeSection === "home"
+                  ? styles.activeMobileLink
+                  : ""
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </a>
 
-        <a
-          href="#projects"
-          className={
-            activeSection === "projects" ? styles.activeMobileLink : ""
-          }
-          onClick={() => setIsOpen(false)}
-        >
-          Projects
-        </a>
+            <a
+              href="#projects"
+              className={
+                activeSection === "projects"
+                  ? styles.activeMobileLink
+                  : ""
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              Projects
+            </a>
 
-        <a
-          href="#about"
-          className={activeSection === "about" ? styles.activeMobileLink : ""}
-          onClick={() => setIsOpen(false)}
-        >
-          About
-        </a>
+            <a
+              href="#about"
+              className={
+                activeSection === "about"
+                  ? styles.activeMobileLink
+                  : ""
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              About
+            </a>
 
-        <a
-          href="#skills"
-          className={activeSection === "skills" ? styles.activeMobileLink : ""}
-          onClick={() => setIsOpen(false)}
-        >
-          Skills
-        </a>
+            <a
+              href="#skills"
+              className={
+                activeSection === "skills"
+                  ? styles.activeMobileLink
+                  : ""
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              Skills
+            </a>
 
-        <a
-          href="#contact"
-          className={activeSection === "contact" ? styles.activeMobileLink : ""}
-          onClick={() => setIsOpen(false)}
-        >
-          Contact
-        </a>
+            <a
+              href="#contact"
+              className={
+                activeSection === "contact"
+                  ? styles.activeMobileLink
+                  : ""
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </a>
+          </>
+        )}
       </aside>
     </>
   );

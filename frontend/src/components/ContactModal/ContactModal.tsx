@@ -51,7 +51,7 @@ function ContactModal({ isOpen, onClose }: Props) {
             <p className={styles.role}>FullStack Developer</p>
 
             <div className={styles.info}>
-              <a href="mailto:imke.paps@hotmail.com">imke.paps@hotmail.com</a>
+              <a href="mailto:imke.paps@outlook.com">imke.paps@outlook.com</a>
 
               <a href="tel:+32498154838">+32 498 15 48 38</a>
             </div>

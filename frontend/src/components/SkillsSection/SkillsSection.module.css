@@ -13,7 +13,7 @@
 .header h2 {
   margin: 0;
 
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3rem);
 
   letter-spacing: -0.04em;
 }
