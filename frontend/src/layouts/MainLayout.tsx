@@ -1,17 +1,24 @@
 import type { ReactNode } from "react";
 
+import Navbar from "../components/Navbar/Navbar";
+
+import styles from "./MainLayout.module.css";
+
 type Props = {
   children: ReactNode;
 };
 
 function MainLayout({ children }: Props) {
   return (
-    <div>
-      <nav>
-        <h2>My App</h2>
-      </nav>
+    <div className={styles.layout}>
+      <div className={styles.glowTop} />
+      <div className={styles.glowBottom} />
 
-      <main>{children}</main>
+      <Navbar />
+
+      <main className={styles.main}>
+        {children}
+      </main>
     </div>
   );
 }
