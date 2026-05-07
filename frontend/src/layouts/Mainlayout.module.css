@@ -58,6 +58,16 @@
   background: var(--color-glow-secondary);
 }
 
+
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: blur(120px);
+}
+
 /* TABLET */
 @media (max-width: 768px) {
   .main {
