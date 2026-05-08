@@ -4,7 +4,7 @@ import { projects } from "../data/projects";
 import { useState } from "react";
 import styles from "./ProjectDetailPage.module.css";
 import Magnetic from "../components/Magnetic/Magnetic";
-import SEO from "../components/SEO/Seo";
+import SEO from "../components/SEO/SEO";
 
 function ProjectDetailPage() {
   const { slug } = useParams();

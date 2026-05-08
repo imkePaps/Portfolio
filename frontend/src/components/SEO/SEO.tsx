@@ -10,10 +10,11 @@ function SEO({
   description,
 }: Props) {
   return (
-    <Helmet>
-      <title>
-        {title} | Imke Paps
-      </title>
+    <Helmet
+      titleTemplate="%s | Imke Paps"
+      defaultTitle="Imke Paps"
+    >
+      <title>{title}</title>
 
       <meta
         name="description"
@@ -37,7 +38,7 @@ function SEO({
 
       <meta
         property="og:image"
-        content="/preview.png"
+        content="/preview.webp"
       />
 
       <meta

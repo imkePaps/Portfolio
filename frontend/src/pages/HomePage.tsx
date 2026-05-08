@@ -7,7 +7,8 @@ import Footer from "../components/Footer/Footer";
 
 import FadeIn from "../components/FadeIn/FadeIn";
 import ExperienceSection from "../components/ExperienceSection/ExperienceSection";
-import SEO from "../components/SEO/Seo";
+import SEO from "../components/SEO/SEO";
+
 
 function HomePage() {
   return (

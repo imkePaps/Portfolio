@@ -46,7 +46,7 @@ function ContactModal({ isOpen, onClose }: Props) {
             </button>
 
             <div className={styles.avatar}>
-              <img src="/contact/imke.jpg" alt="Imke Paps" />
+              <img src="/contact/imke.webp" alt="Imke Paps" loading="lazy" />
             </div>
 
             <h2>Imke Paps</h2>
