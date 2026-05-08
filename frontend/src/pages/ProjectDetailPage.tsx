@@ -3,6 +3,7 @@ import Section from "../components/Section/Section";
 import { projects } from "../data/projects";
 import { useState } from "react";
 import styles from "./ProjectDetailPage.module.css";
+import Magnetic from "../components/Magnetic/Magnetic";
 
 function ProjectDetailPage() {
   const { slug } = useParams();
@@ -41,17 +42,21 @@ function ProjectDetailPage() {
         {/* ACTIONS */}
         {(project.github || project.live) && (
           <div className={styles.actions}>
-            {project.github && (
-              <a href={project.github} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-            )}
+            <Magnetic>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+              )}
+            </Magnetic>
 
-            {project.live && (
-              <a href={project.live} target="_blank" rel="noreferrer">
-                Live Demo
-              </a>
-            )}
+            <Magnetic>
+              {project.live && (
+                <a href={project.live} target="_blank" rel="noreferrer">
+                  Website
+                </a>
+              )}
+            </Magnetic>
           </div>
         )}
 

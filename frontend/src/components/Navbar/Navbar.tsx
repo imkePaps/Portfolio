@@ -60,10 +60,7 @@ function Navbar() {
         className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}
       >
         <div className={styles.container}>
-          <Link
-            to="/"
-            className={styles.logo}
-          >
+          <Link to="/" className={styles.logo}>
             Imke Paps
           </Link>
 
@@ -146,10 +143,9 @@ function Navbar() {
         }`}
       >
         {isProjectPage ? (
-          <Link
-            to="/"
-            onClick={() => setIsOpen(false)}
-          >Back Home</Link>
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            Back Home
+          </Link>
         ) : (
           <>
             <a

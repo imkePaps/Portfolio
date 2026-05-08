@@ -22,7 +22,7 @@
 
 .description {
   margin-top: 32px;
-
+  white-space: pre-line;
   color: var(--color-text-secondary);
 
   line-height: 1.8;
@@ -127,17 +127,52 @@
 }
 
 .actions a {
-  padding: 14px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  border-radius: 999px;
+  min-width: 160px;
 
-  background: rgba(255, 255, 255, 0.06);
+  padding: 16px 24px;
 
-  transition: var(--transition-default);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.16),
+    rgba(124, 58, 237, 0.12)
+  );
+
+  color: var(--color-text);
+
+  font-weight: 600;
+
+  letter-spacing: -0.01em;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
-
 .actions a:hover {
-  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 255, 255, 0.16);
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.24),
+    rgba(124, 58, 237, 0.18)
+  );
+
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
 }
 
 .lightbox {

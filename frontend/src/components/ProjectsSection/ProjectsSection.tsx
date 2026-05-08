@@ -55,7 +55,7 @@ function ProjectsSection() {
               <ProjectCard
                 title={project.title}
                 description={project.description}
-                tech={project.technologies}
+                tech={project.technologies.slice(0, 3)}
                 image={project.images?.[0]}
               />
             </Link>
