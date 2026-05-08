@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,7 @@ function Navbar() {
         });
       },
       {
-        threshold: 0.4,
+        threshold: 0.15,
       },
     );
 
@@ -59,11 +60,16 @@ function Navbar() {
         className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}
       >
         <div className={styles.container}>
-          <h1 className={styles.logo}>Imke Paps</h1>
+          <Link
+            to="/"
+            className={styles.logo}
+          >
+            Imke Paps
+          </Link>
 
           <nav className={styles.links}>
             {isProjectPage ? (
-              <a href="/">Back Home</a>
+              <Link to="/">Back Home</Link>
             ) : (
               <>
                 <a
@@ -96,6 +102,14 @@ function Navbar() {
                   }
                 >
                   Skills
+                </a>
+                <a
+                  href="#experience"
+                  className={
+                    activeSection === "experience" ? styles.activeLink : ""
+                  }
+                >
+                  Experience
                 </a>
 
                 <a
@@ -132,9 +146,10 @@ function Navbar() {
         }`}
       >
         {isProjectPage ? (
-          <a href="/" onClick={() => setIsOpen(false)}>
-            Back Home
-          </a>
+          <Link
+            to="/"
+            onClick={() => setIsOpen(false)}
+          >Back Home</Link>
         ) : (
           <>
             <a
@@ -175,6 +190,15 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Skills
+            </a>
+            <a
+              href="#experience"
+              className={
+                activeSection === "experience" ? styles.activeMobileLink : ""
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              Experience
             </a>
 
             <a
