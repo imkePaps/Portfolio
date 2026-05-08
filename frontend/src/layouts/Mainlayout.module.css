@@ -47,25 +47,33 @@
 
   border-radius: 50%;
 
-  filter: blur(160px);
-
-  opacity: 0.35;
+  opacity: 0.25;
 
   pointer-events: none;
+
+  filter: blur(100px);
 }
 
 .glowTop {
   top: -200px;
   right: -200px;
 
-  background: var(--color-glow-primary);
+  background: radial-gradient(
+    circle at center,
+    var(--color-glow-primary) 0%,
+    transparent 70%
+  );
 }
 
 .glowBottom {
   bottom: -250px;
   left: -200px;
 
-  background: var(--color-glow-secondary);
+  background: radial-gradient(
+    circle at center,
+    var(--color-glow-secondary) 0%,
+    transparent 70%
+  );
 }
 
 /* MAIN CONTENT */

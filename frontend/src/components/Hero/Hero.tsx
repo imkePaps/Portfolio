@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 
 import Button from "../Button/Button";
-import ContactModal from "../ContactModal/ContactModal";
 import Magnetic from "../Magnetic/Magnetic";
 import Section from "../Section/Section";
+
+const ContactModal = lazy(() => import("../ContactModal/ContactModal"));
 
 import styles from "./Hero.module.css";
 
@@ -42,10 +43,12 @@ function Hero() {
         </div>
       </Section>
 
-      <ContactModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      <Suspense fallback={null}>
+        <ContactModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      </Suspense>
     </>
   );
 }

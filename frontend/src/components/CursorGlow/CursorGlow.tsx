@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { throttle } from "../../utils/throttle";
 
 import styles from "./CursorGlow.module.css";
 
@@ -16,10 +17,10 @@ function CursorGlow() {
   });
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = throttle((e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
-    };
+    }, 16); // ~60fps
 
     window.addEventListener("mousemove", handleMouseMove);
 

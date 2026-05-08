@@ -7,10 +7,15 @@ import Footer from "../components/Footer/Footer";
 
 import FadeIn from "../components/FadeIn/FadeIn";
 import ExperienceSection from "../components/ExperienceSection/ExperienceSection";
+import SEO from "../components/SEO/Seo";
 
 function HomePage() {
   return (
     <>
+    <SEO
+        title="Fullstack Developer Portfolio"
+        description="Modern portfolio showcasing fullstack development, interactive UI, React applications and scalable frontend architecture."
+      />
       <Hero />
 
       <FadeIn>

@@ -27,7 +27,7 @@ function FloatingOrb({ position, color, speed = 0.4, scale = 1 }: Props) {
 
   return (
     <mesh ref={meshRef} position={position} scale={scale}>
-      <sphereGeometry args={[1, 64, 64]} />
+      <sphereGeometry args={[1, 24, 24]} />
 
       <meshStandardMaterial
         color={color}
@@ -36,6 +36,7 @@ function FloatingOrb({ position, color, speed = 0.4, scale = 1 }: Props) {
         emissive={color}
         emissiveIntensity={1.5}
         roughness={0.4}
+        wireframe
       />
     </mesh>
   );

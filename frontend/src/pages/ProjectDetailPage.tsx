@@ -4,6 +4,7 @@ import { projects } from "../data/projects";
 import { useState } from "react";
 import styles from "./ProjectDetailPage.module.css";
 import Magnetic from "../components/Magnetic/Magnetic";
+import SEO from "../components/SEO/Seo";
 
 function ProjectDetailPage() {
   const { slug } = useParams();
@@ -22,6 +23,12 @@ function ProjectDetailPage() {
   }
 
   return (
+     <>
+      <SEO
+        title={project.title}
+        description={project.description}
+      />
+    
     <Section>
       <div className={styles.container}>
         <div className={styles.meta}>
@@ -94,7 +101,7 @@ function ProjectDetailPage() {
                 className={styles.imageCard}
                 onClick={() => setSelectedImage(image)}
               >
-                <img src={image} alt={project.title} />
+                <img src={image} alt={project.title} loading="lazy" />
               </button>
             ))}
           </div>
@@ -110,6 +117,7 @@ function ProjectDetailPage() {
         </div>
       )}
     </Section>
+    </>
   );
 }
 

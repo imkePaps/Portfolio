@@ -124,6 +124,8 @@ function Navbar() {
           <button
             className={`${styles.menuButton} ${isOpen ? styles.active : ""}`}
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             <span />
             <span />

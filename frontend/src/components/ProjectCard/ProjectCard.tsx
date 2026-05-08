@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { throttle } from "../../utils/throttle";
 import styles from "./ProjectCard.module.css";
 
 type Props = {
@@ -13,7 +14,7 @@ function ProjectCard({ title, description, year, tech, image }: Props) {
   const cardRef = useRef<HTMLDivElement | null>(null);
   const [expanded, setExpanded] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = throttle((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
@@ -37,7 +38,7 @@ function ProjectCard({ title, description, year, tech, image }: Props) {
     cardRef.current.style.setProperty("--mouse-x", `${x}px`);
 
     cardRef.current.style.setProperty("--mouse-y", `${y}px`);
-  };
+  }, 16);
 
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
@@ -60,7 +61,7 @@ function ProjectCard({ title, description, year, tech, image }: Props) {
       <div className={styles.glow} />
 
       <div className={styles.image}>
-        {image && <img src={image} alt={title} />}
+        {image && <img src={image} alt={title} loading="lazy" />}
       </div>
 
       <div className={styles.content}>

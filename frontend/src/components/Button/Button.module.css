@@ -3,6 +3,11 @@
   border-radius: var(--radius-medium);
 
   padding: 14px 24px;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   cursor: pointer;
   will-change: transform;

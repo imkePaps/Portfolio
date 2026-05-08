@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import type { ReactNode } from "react";
+import { throttle } from "../../utils/throttle";
 
 type Props = {
   children: ReactNode;
@@ -8,7 +9,7 @@ type Props = {
 function Magnetic({ children }: Props) {
   const elementRef = useRef<HTMLDivElement | null>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = throttle((e: React.MouseEvent<HTMLDivElement>) => {
     if (!elementRef.current) return;
 
     const rect = elementRef.current.getBoundingClientRect();
@@ -20,7 +21,7 @@ function Magnetic({ children }: Props) {
     elementRef.current.style.transform = `translate(${x * 0.15}px, ${
       y * 0.15
     }px)`;
-  };
+  }, 16);
 
   const handleMouseLeave = () => {
     if (!elementRef.current) return;
