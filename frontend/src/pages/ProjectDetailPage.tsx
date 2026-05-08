@@ -1,17 +1,14 @@
 import { useParams } from "react-router-dom";
-
 import Section from "../components/Section/Section";
-
 import { projects } from "../data/projects";
-
+import { useState } from "react";
 import styles from "./ProjectDetailPage.module.css";
 
 function ProjectDetailPage() {
   const { slug } = useParams();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  const project = projects.find(
-    (p) => p.slug === slug
-  );
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return (
@@ -26,88 +23,79 @@ function ProjectDetailPage() {
   return (
     <Section>
       <div className={styles.container}>
-        <span className={styles.label}>
-          Project
-        </span>
+        <span className={styles.label}>Project</span>
 
-        <h1 className={styles.title}>
-          {project.title}
-        </h1>
+        <h1 className={styles.title}>{project.title}</h1>
 
-        <p className={styles.description}>
-          {project.longDescription}
-        </p>
+        <p className={styles.description}>{project.longDescription}</p>
 
         {/* TECH STACK */}
         {project.technologies && (
           <div className={styles.techStack}>
-            {project.technologies.map(
-              (tech) => (
-                <span key={tech}>
-                  {tech}
-                </span>
-              )
-            )}
+            {project.technologies.map((tech) => (
+              <span key={tech}>{tech}</span>
+            ))}
           </div>
         )}
 
-        {/* IMAGE GALLERY */}
-        {project.images && (
-          <div className={styles.gallery}>
-            {project.images.map(
-              (image) => (
-                <img
-                  key={image}
-                  src={image}
-                  alt={project.title}
-                />
-              )
+        {/* ACTIONS */}
+        {(project.github || project.live) && (
+          <div className={styles.actions}>
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            )}
+
+            {project.live && (
+              <a href={project.live} target="_blank" rel="noreferrer">
+                Live Demo
+              </a>
             )}
           </div>
         )}
 
         {/* VIDEO */}
         {project.video && (
-          <video
-            className={styles.video}
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source
-              src={project.video}
-              type="video/mp4"
-            />
-          </video>
+          <div className={styles.videoWrapper}>
+            <video
+              className={styles.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              poster="/projects/maui/poster.png"
+            >
+              <source src={project.video} type="video/mp4" />
+            </video>
+          </div>
         )}
 
-        {/* ACTIONS */}
-        {(project.github ||
-          project.live) && (
-          <div className={styles.actions}>
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
+        {/* IMAGE GALLERY */}
+        {project.images && (
+          <div className={styles.gallery}>
+            {project.images.map((image) => (
+              <button
+                key={image}
+                className={styles.imageCard}
+                onClick={() => setSelectedImage(image)}
               >
-                GitHub
-              </a>
-            )}
-
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Live Demo
-              </a>
-            )}
+                <img src={image} alt={project.title} />
+              </button>
+            ))}
           </div>
         )}
       </div>
+      {selectedImage && (
+        <div className={styles.lightbox} onClick={() => setSelectedImage(null)}>
+          <img
+            src={selectedImage}
+            alt="Preview"
+            className={styles.lightboxImage}
+          />
+        </div>
+      )}
     </Section>
   );
 }

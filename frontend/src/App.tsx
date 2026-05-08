@@ -10,7 +10,7 @@ function App() {
       <MainLayout>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/projects/:slug" element={<ProjectDetailPage />}/>
+          <Route path="/projects/:slug" element={<ProjectDetailPage />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
@@ -18,4 +18,3 @@ function App() {
 }
 
 export default App;
-  

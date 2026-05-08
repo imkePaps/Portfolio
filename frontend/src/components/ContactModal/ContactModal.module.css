@@ -43,15 +43,38 @@
 }
 
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 110px;
+  height: 110px;
 
-  margin: 0 auto 20px;
+  margin: 0 auto 24px;
+
+  overflow: hidden;
 
   border-radius: 50%;
 
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  box-shadow: 0 0 60px rgba(37, 99, 235, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 0 40px rgba(37, 99, 235, 0.25);
+  position: relative;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.avatar::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .modal h2 {

@@ -48,54 +48,35 @@ function AboutSection() {
   return (
     <Section id="about">
       <div className={styles.container}>
-        <p className={styles.label}>
-          ABOUT
-        </p>
+        <p className={styles.label}>ABOUT</p>
 
         <h2 className={styles.title}>
-          Creating scalable digital
-          experiences with a focus on
-          performance, clean
-          architecture and refined
-          user interfaces.
+          Creating scalable digital experiences with a focus on performance,
+          clean architecture and refined user interfaces.
         </h2>
 
         <div className={styles.text}>
           <p>
-            I'm a fullstack developer
-            passionate about creating modern
-            web applications that combine
-            robust backend systems with
-            intuitive and polished frontend
-            experiences.
+            I'm a fullstack developer passionate about creating modern web
+            applications that combine robust backend systems with intuitive and
+            polished frontend experiences.
           </p>
 
           <p>
-            My expertise spans React
-            frontend engineering, scalable
-            backend development and building
-            maintainable digital products
-            focused on performance,
-            reliability and long-term
-            scalability. 
+            My expertise spans React frontend engineering, scalable backend
+            development and building maintainable digital products focused on
+            performance, reliability and long-term scalability.
           </p>
         </div>
 
         <div className={styles.cards}>
           {pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className={styles.card}
-            >
-              <span
-                className={styles.glow}
-              />
+            <div key={pillar.title} className={styles.card}>
+              <span className={styles.glow} />
 
               <h3>{pillar.title}</h3>
 
-              <p>
-                {pillar.description}
-              </p>
+              <p>{pillar.description}</p>
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 import styles from "./ContactModal.module.css";
+import Magnetic from "../Magnetic/Magnetic";
 
 type Props = {
   isOpen: boolean;
@@ -44,7 +45,9 @@ function ContactModal({ isOpen, onClose }: Props) {
               ✕
             </button>
 
-            <div className={styles.avatar} />
+            <div className={styles.avatar}>
+              <img src="/contact/imke.jpg" alt="Imke Paps" />
+            </div>
 
             <h2>Imke Paps</h2>
 
@@ -57,16 +60,19 @@ function ContactModal({ isOpen, onClose }: Props) {
             </div>
 
             <div className={styles.actions}>
-              <a href="https://github.com/imkePaps" target="_blank">
-                GitHub
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/imke-p-b93241200/"
-                target="_blank"
-              >
-                LinkedIn
-              </a>
+              <Magnetic>
+                <a href="https://github.com/imkePaps" target="_blank">
+                  GitHub
+                </a>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href="https://www.linkedin.com/in/imke-p-b93241200/"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>
+              </Magnetic>
             </div>
           </motion.div>
         </motion.div>

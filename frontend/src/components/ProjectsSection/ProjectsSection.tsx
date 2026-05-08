@@ -56,6 +56,7 @@ function ProjectsSection() {
                 title={project.title}
                 description={project.description}
                 tech={project.technologies}
+                image={project.images?.[0]}
               />
             </Link>
           </motion.div>

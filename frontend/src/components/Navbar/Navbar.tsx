@@ -68,11 +68,7 @@ function Navbar() {
               <>
                 <a
                   href="#home"
-                  className={
-                    activeSection === "home"
-                      ? styles.activeLink
-                      : ""
-                  }
+                  className={activeSection === "home" ? styles.activeLink : ""}
                 >
                   Home
                 </a>
@@ -80,9 +76,7 @@ function Navbar() {
                 <a
                   href="#projects"
                   className={
-                    activeSection === "projects"
-                      ? styles.activeLink
-                      : ""
+                    activeSection === "projects" ? styles.activeLink : ""
                   }
                 >
                   Projects
@@ -90,11 +84,7 @@ function Navbar() {
 
                 <a
                   href="#about"
-                  className={
-                    activeSection === "about"
-                      ? styles.activeLink
-                      : ""
-                  }
+                  className={activeSection === "about" ? styles.activeLink : ""}
                 >
                   About
                 </a>
@@ -102,9 +92,7 @@ function Navbar() {
                 <a
                   href="#skills"
                   className={
-                    activeSection === "skills"
-                      ? styles.activeLink
-                      : ""
+                    activeSection === "skills" ? styles.activeLink : ""
                   }
                 >
                   Skills
@@ -113,9 +101,7 @@ function Navbar() {
                 <a
                   href="#contact"
                   className={
-                    activeSection === "contact"
-                      ? styles.activeLink
-                      : ""
+                    activeSection === "contact" ? styles.activeLink : ""
                   }
                 >
                   Contact
@@ -146,10 +132,7 @@ function Navbar() {
         }`}
       >
         {isProjectPage ? (
-          <a
-            href="/"
-            onClick={() => setIsOpen(false)}
-          >
+          <a href="/" onClick={() => setIsOpen(false)}>
             Back Home
           </a>
         ) : (
@@ -157,9 +140,7 @@ function Navbar() {
             <a
               href="#home"
               className={
-                activeSection === "home"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "home" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -169,9 +150,7 @@ function Navbar() {
             <a
               href="#projects"
               className={
-                activeSection === "projects"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "projects" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -181,9 +160,7 @@ function Navbar() {
             <a
               href="#about"
               className={
-                activeSection === "about"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "about" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -193,9 +170,7 @@ function Navbar() {
             <a
               href="#skills"
               className={
-                activeSection === "skills"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "skills" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -205,9 +180,7 @@ function Navbar() {
             <a
               href="#contact"
               className={
-                activeSection === "contact"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "contact" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >

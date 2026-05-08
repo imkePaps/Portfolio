@@ -1,15 +1,16 @@
-import { useRef } from "react";
-
+import { useRef, useState } from "react";
 import styles from "./ProjectCard.module.css";
 
 type Props = {
   title: string;
   description: string;
   tech: string[];
+  image?: string;
 };
 
-function ProjectCard({ title, description, tech }: Props) {
+function ProjectCard({ title, description, tech, image }: Props) {
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -57,12 +58,29 @@ function ProjectCard({ title, description, tech }: Props) {
     >
       <div className={styles.glow} />
 
-      <div className={styles.image} />
+      <div className={styles.image}>
+        {image && <img src={image} alt={title} />}
+      </div>
 
       <div className={styles.content}>
         <h3>{title}</h3>
 
-        <p>{description}</p>
+        <div className={styles.description}>
+          <p className={expanded ? styles.expanded : ""}>{description}</p>
+
+          {description.length > 120 && (
+            <button
+              className={styles.readMore}
+              onClick={(e) => {
+                e.preventDefault();
+
+                setExpanded(!expanded);
+              }}
+            >
+              {expanded ? "Show less" : "Read more"}
+            </button>
+          )}
+        </div>
 
         <div className={styles.tech}>
           {tech.map((item) => (

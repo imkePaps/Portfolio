@@ -22,8 +22,7 @@ const skills = [
 ];
 
 function SkillsSection() {
-  const [expanded, setExpanded] =
-    useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <Section id="skills">
@@ -33,32 +32,16 @@ function SkillsSection() {
         <h2>Technologies & tools</h2>
       </div>
 
-      <div
-        className={`${styles.grid} ${
-          expanded
-            ? styles.expanded
-            : ""
-        }`}
-      >
+      <div className={`${styles.grid} ${expanded ? styles.expanded : ""}`}>
         {skills.map((skill) => (
-          <div
-            key={skill}
-            className={styles.card}
-          >
+          <div key={skill} className={styles.card}>
             {skill}
           </div>
         ))}
       </div>
 
-      <button
-        className={styles.toggle}
-        onClick={() =>
-          setExpanded(!expanded)
-        }
-      >
-        {expanded
-          ? "Show Less ↑"
-          : "Show More ↓"}
+      <button className={styles.toggle} onClick={() => setExpanded(!expanded)}>
+        {expanded ? "Show Less ↑" : "Show More ↓"}
       </button>
     </Section>
   );

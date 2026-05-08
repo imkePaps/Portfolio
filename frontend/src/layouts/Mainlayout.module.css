@@ -58,16 +58,14 @@
   top: -200px;
   right: -200px;
 
-  background:
-    var(--color-glow-primary);
+  background: var(--color-glow-primary);
 }
 
 .glowBottom {
   bottom: -250px;
   left: -200px;
 
-  background:
-    var(--color-glow-secondary);
+  background: var(--color-glow-secondary);
 }
 
 /* MAIN CONTENT */

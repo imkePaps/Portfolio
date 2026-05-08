@@ -14,16 +14,16 @@ function Hero() {
     <>
       <Section id="home" className={styles.hero}>
         <div className={styles.content}>
-          <p className={styles.subtitle}>
-            FULLSTACK DEVELOPER
-          </p>
+          <p className={styles.subtitle}>FULLSTACK DEVELOPER</p>
 
           <h2 className={styles.title}>
-            Building scalable digital products with modern frontend experiences and robust backend architecture.
+            Building scalable digital products with modern frontend experiences
+            and robust backend architecture.
           </h2>
 
           <p className={styles.description}>
-            Fullstack developer focused on high-performance applications, intuitive user experiences and scalable software systems.
+            Fullstack developer focused on high-performance applications,
+            intuitive user experiences and scalable software systems.
           </p>
 
           <div className={styles.actions}>
