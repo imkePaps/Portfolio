@@ -24,7 +24,15 @@ function ProjectDetailPage() {
   return (
     <Section>
       <div className={styles.container}>
-        <span className={styles.label}>Project</span>
+        <div className={styles.meta}>
+          <span className={styles.label}>
+            Project
+          </span>
+
+          <span className={styles.year}>
+            {project.year}
+          </span>
+        </div>
 
         <h1 className={styles.title}>{project.title}</h1>
 

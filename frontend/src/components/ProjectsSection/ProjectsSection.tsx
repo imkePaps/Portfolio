@@ -54,6 +54,7 @@ function ProjectsSection() {
             <Link to={`/projects/${project.slug}`}>
               <ProjectCard
                 title={project.title}
+                year={project.year}
                 description={project.description}
                 tech={project.technologies.slice(0, 3)}
                 image={project.images?.[0]}

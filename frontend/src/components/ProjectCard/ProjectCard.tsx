@@ -4,11 +4,12 @@ import styles from "./ProjectCard.module.css";
 type Props = {
   title: string;
   description: string;
+  year: string;
   tech: string[];
   image?: string;
 };
 
-function ProjectCard({ title, description, tech, image }: Props) {
+function ProjectCard({ title, description, year, tech, image }: Props) {
   const cardRef = useRef<HTMLDivElement | null>(null);
   const [expanded, setExpanded] = useState(false);
 
@@ -64,6 +65,10 @@ function ProjectCard({ title, description, tech, image }: Props) {
 
       <div className={styles.content}>
         <h3>{title}</h3>
+
+        <p className={styles.year}>
+          {year}
+        </p>
 
         <div className={styles.description}>
           <p className={expanded ? styles.expanded : ""}>{description}</p>

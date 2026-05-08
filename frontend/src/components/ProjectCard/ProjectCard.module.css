@@ -120,6 +120,20 @@
   font-size: 0.9rem;
 }
 
+.year {
+  margin-bottom: 10px;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.8rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
 .description {
   margin-top: var(--space-sm);
 }
