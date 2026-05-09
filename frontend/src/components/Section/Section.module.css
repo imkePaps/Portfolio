@@ -1,0 +1,28 @@
+.section {
+  width: 100%;
+  max-width: var(--container-width);
+  scroll-margin-top: 100px;
+
+  margin: 0 auto;
+  padding: clamp(80px, 12vw, 140px) 24px;
+  position: relative;
+}
+.section::after {
+  content: "";
+
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+
+  width: 60%;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.06),
+    transparent
+  );
+}

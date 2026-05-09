@@ -1,0 +1,262 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 999;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background: rgba(15, 15, 17, 0.95);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+.scrolled {
+  background: rgba(15, 15, 17, 0.75);
+
+  background: rgba(15, 15, 17, 0.75);
+
+  border-color: rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+.container {
+  max-width: var(--container-width);
+  height: 72px;
+
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  position: relative;
+  z-index: 200;
+
+  font-size: 1.3rem;
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+}
+
+.links a {
+  position: relative;
+
+  color: var(--color-text-secondary);
+
+  transition: var(--transition-default);
+}
+
+.links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0%;
+  height: 1px;
+
+  background: var(--color-text);
+
+  transition: var(--transition-default);
+}
+
+.links a:hover,
+.links .activeLink {
+  color: var(--color-text);
+}
+
+.links a:hover::after,
+.links .activeLink::after {
+  width: 100%;
+}
+
+/* HAMBURGER */
+.menuButton {
+  position: relative;
+  z-index: 200;
+
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+
+  background: var(--color-surface-light);
+
+  cursor: pointer;
+
+  transition: var(--transition-default);
+}
+
+.menuButton:hover {
+  border-color: var(--color-border-hover);
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menuButton span {
+  position: absolute;
+  left: 10px;
+
+  width: 20px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--color-text);
+
+  transition: 0.25s ease;
+}
+
+.menuButton span:nth-child(1) {
+  top: 13px;
+}
+
+.menuButton span:nth-child(2) {
+  top: 19px;
+}
+
+.menuButton span:nth-child(3) {
+  top: 25px;
+}
+
+/* ANIMATION */
+.active span:nth-child(1) {
+  top: 19px;
+
+  transform: rotate(45deg);
+}
+
+.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.active span:nth-child(3) {
+  top: 19px;
+
+  transform: rotate(-45deg);
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 120;
+
+  background: rgba(0, 0, 0, 0);
+
+  pointer-events: none;
+
+  transition: var(--transition-default);
+}
+
+.overlayVisible {
+  background: rgba(0, 0, 0, 0.5);
+
+  pointer-events: auto;
+}
+
+/* MOBILE MENU */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+
+  z-index: 150;
+
+  width: 280px;
+  height: 100vh;
+
+  padding: 120px 24px 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background: rgba(15, 15, 17, 0.95);
+
+  background: rgba(15, 15, 17, 0.95);
+
+  border-left: 1px solid var(--color-border);
+
+  transition: 0.3s ease;
+}
+
+.mobileMenuOpen {
+  right: 0;
+}
+
+.mobileMenu a {
+  padding: 16px;
+
+  border-radius: var(--radius-medium);
+
+  color: var(--color-text-secondary);
+
+  font-size: 1.1rem;
+
+  transition: var(--transition-default);
+}
+
+.mobileMenu a:hover,
+.mobileMenu .activeMobileLink {
+  background: var(--color-surface-light);
+
+  color: var(--color-text);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .links {
+    gap: 20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .container {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .activeMobileLink {
+    background: var(--color-surface-light);
+
+    color: var(--color-text);
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+}
