@@ -57,15 +57,16 @@ function AboutSection() {
 
         <div className={styles.text}>
           <p>
-            I'm a fullstack developer passionate about creating modern web
-            applications that combine robust backend systems with intuitive and
-            polished frontend experiences.
+            I'm a fullstack developer who enjoys building modern web
+            applications with a strong focus on clean development, intuitive
+            user experiences and continuously improving through new challenges
+            and technologies.
           </p>
 
           <p>
-            My expertise spans React frontend engineering, scalable backend
-            development and building maintainable digital products focused on
-            performance, reliability and long-term scalability.
+            Passionate about fullstack development, I enjoy solving problems,
+            experimenting with new technologies and continuously pushing myself
+            to grow through ambitious projects and hands-on learning.
           </p>
         </div>
 

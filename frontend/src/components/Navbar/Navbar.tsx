@@ -11,33 +11,64 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const isProjectPage = location.pathname.includes("/projects/");
-
+  const isStaticPage = location.pathname !== "/";
   /* ACTIVE SECTION */
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sectionIds = [
+      "home",
+      "projects",
+      "about",
+      "skills",
+      "experience",
+      "contact",
+    ];
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-      },
-    );
+    let ticking = false;
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    const updateSection = () => {
+      let current = "home";
+
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+
+        if (!section) return;
+
+        const top = section.offsetTop - 140;
+
+        const height = section.offsetHeight;
+
+        if (window.scrollY >= top && window.scrollY < top + height) {
+          current = id;
+        }
+      });
+
+      /* FORCE CONTACT AT PAGE BOTTOM */
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50
+      ) {
+        current = "contact";
+      }
+
+      setActiveSection(current);
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateSection);
+
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    updateSection();
 
     return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -65,7 +96,7 @@ function Navbar() {
           </Link>
 
           <nav className={styles.links}>
-            {isProjectPage ? (
+            {isStaticPage ? (
               <Link to="/">Back Home</Link>
             ) : (
               <>
@@ -144,7 +175,7 @@ function Navbar() {
           isOpen ? styles.mobileMenuOpen : ""
         }`}
       >
-        {isProjectPage ? (
+        {isStaticPage ? (
           <Link to="/" onClick={() => setIsOpen(false)}>
             Back Home
           </Link>

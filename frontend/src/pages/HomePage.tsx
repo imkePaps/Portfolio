@@ -9,11 +9,10 @@ import FadeIn from "../components/FadeIn/FadeIn";
 import ExperienceSection from "../components/ExperienceSection/ExperienceSection";
 import SEO from "../components/SEO/SEO";
 
-
 function HomePage() {
   return (
     <>
-    <SEO
+      <SEO
         title="Fullstack Developer Portfolio"
         description="Modern portfolio showcasing fullstack development, interactive UI, React applications and scalable frontend architecture."
       />

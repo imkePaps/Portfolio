@@ -8,7 +8,7 @@ type Props = {
 
 function Button({ text, variant = "primary", ariaLabel }: Props) {
   return (
-    <button 
+    <button
       className={`${styles.button} ${styles[variant]}`}
       aria-label={ariaLabel || text}
     >
