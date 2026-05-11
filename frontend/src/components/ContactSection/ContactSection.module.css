@@ -35,3 +35,19 @@
 .actions {
   margin-top: var(--space-lg);
 }
+
+@media (max-width: 768px) {
+  .container p:first-child, 
+  .container h2,
+  .description {
+    text-align: left;
+  }
+
+  .actions {
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: var(--space-sm); 
+  } 
+
+}

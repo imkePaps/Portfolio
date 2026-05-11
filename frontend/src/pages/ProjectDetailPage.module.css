@@ -271,3 +271,26 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 36px;         
+    height: 36px;
+    font-size: 1.1rem;       
+    background: rgba(255, 255, 255, 0.06); 
+    border: 1px solid rgba(255, 255, 255, 0.06); 
+  }
+
+  .arrow.left {
+    left: 12px;              
+  }
+
+  .arrow.right {
+    right: 12px;
+  }
+
+  .arrow:hover {
+    transform: translateY(-50%) scale(1.05);
+    background: rgba(255, 255, 255, 0.1); 
+  }
+}

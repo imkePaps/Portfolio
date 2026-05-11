@@ -29,9 +29,9 @@ const experiences = [
     tech: ["Laravel", "Php", "Blade", "Git"],
   },
   {
-    year: "2023 — 2024",
+    year: "2023 - 2024",
 
-    role: "Web Design & Digital Media",
+    role: "Web Design & Digital Media Study",
 
     company: "CVO",
 
@@ -41,7 +41,7 @@ const experiences = [
     tech: ["HTML", "CSS", "Adobe Creative Cloud", "Photoshop"],
   },
   {
-    year: "2023 — 2024",
+    year: "2023 - 2024",
 
     role: "Customer Service & Administration",
 
@@ -80,9 +80,9 @@ const experiences = [
   },
 
   {
-    year: "2020 — 2021",
+    year: "2020 - 2021",
 
-    role: "Team Coach",
+    role: "Team Coach Student",
 
     company: "Syntra",
 

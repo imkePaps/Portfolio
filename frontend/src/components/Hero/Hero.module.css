@@ -26,7 +26,7 @@
   font-weight: 700;
   text-wrap: balance;
 
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(2.3rem, 8vw, 5rem);
   line-height: 1;
 
   letter-spacing: -0.04em;
@@ -70,7 +70,7 @@
 /* MOBILE */
 @media (max-width: 480px) {
   .hero {
-    padding: 32px 0 16px;
+    padding: 32px 0 16px;    
   }
 
   .subtitle {
