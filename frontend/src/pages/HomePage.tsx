@@ -13,7 +13,7 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="Fullstack Developer Portfolio"
+        title="Imke Paps"
         description="Modern portfolio showcasing fullstack development, interactive UI, React applications and scalable frontend architecture."
       />
       <Hero />

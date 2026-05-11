@@ -21,7 +21,7 @@ The project also includes subtle React Three Fiber integrations to add depth, at
 
     github: "https://github.com/imkePaps/Portfolio",
 
-    live: "https://example.com",
+    live: "https://imkepaps.com",
 
     images: [
       "/projects/portfolio/portfolio.webp",
