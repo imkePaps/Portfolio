@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { throttle } from "../../utils/throttle";
 import styles from "./ProjectCard.module.css";
 
@@ -13,15 +13,22 @@ type Props = {
 function ProjectCard({ title, description, year, tech, image }: Props) {
   const cardRef = useRef<HTMLDivElement | null>(null);
   const [expanded, setExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 480);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const showToggle = isMobile || description.length > 120;
 
   const handleMouseMove = throttle((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
-
     const rect = cardRef.current.getBoundingClientRect();
-
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
@@ -34,15 +41,12 @@ function ProjectCard({ title, description, year, tech, image }: Props) {
       rotateY(${rotateY}deg)
       translateY(-6px)
     `;
-
     cardRef.current.style.setProperty("--mouse-x", `${x}px`);
-
     cardRef.current.style.setProperty("--mouse-y", `${y}px`);
   }, 16);
 
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
-
     cardRef.current.style.transform = `
       perspective(1000px)
       rotateX(0deg)
@@ -66,18 +70,16 @@ function ProjectCard({ title, description, year, tech, image }: Props) {
 
       <div className={styles.content}>
         <h3>{title}</h3>
-
         <p className={styles.year}>{year}</p>
 
         <div className={styles.description}>
           <p className={expanded ? styles.expanded : ""}>{description}</p>
 
-          {description.length > 120 && (
+          {showToggle && (
             <button
               className={styles.readMore}
               onClick={(e) => {
                 e.preventDefault();
-
                 setExpanded(!expanded);
               }}
             >

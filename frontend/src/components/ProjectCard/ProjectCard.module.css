@@ -3,6 +3,8 @@
   --mouse-y: 50%;
 
   position: relative;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   overflow: hidden;
 
@@ -81,6 +83,9 @@
 
 .content {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   z-index: 2;
 
   padding: var(--space-md);
@@ -103,11 +108,10 @@
 }
 
 .tech {
+  margin-top: auto; 
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-
-  margin-top: var(--space-md);
 }
 
 .tech span {
@@ -135,7 +139,7 @@
 }
 
 .description {
-  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
 
 .description p {
@@ -188,4 +192,12 @@
   display: flex;
 
   align-items: stretch;
+}
+
+@media (max-width: 480px) {
+  .description p {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2; 
+  }
 }
