@@ -24,6 +24,47 @@
 
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
+
+.logo {
+  position: relative;
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-sm);
+
+  height: 100%;
+
+  color: var(--color-text);
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+
+  line-height: 1;
+}
+
+.logoImage {
+  display: block;
+
+  width: 42px;
+  height: 42px;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+
+  flex-shrink: 0;
+}
+
+.logoText {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
 .container {
   max-width: var(--container-width);
   height: 72px;
@@ -237,6 +278,16 @@
 
 /* MOBILE */
 @media (max-width: 480px) {
+  .logo {
+    gap: 12px;
+  
+    font-size: 1.05rem;
+  }
+  
+  .logoImage {
+    width: 36px;
+    height: 36px;
+  }
   .container {
     height: 64px;
     padding: 0 16px;

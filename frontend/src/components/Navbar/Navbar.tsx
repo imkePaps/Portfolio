@@ -92,8 +92,9 @@ function Navbar() {
       >
         <div className={styles.container}>
           <Link to="/" className={styles.logo}>
-            Imke Paps
-          </Link>
+          <img className={styles.logoImage} src="/favicon.webp" alt="Imke Paps"/>
+          <span>Imke Paps</span>
+        </Link>
 
           <nav className={styles.links}>
             {isStaticPage ? (
