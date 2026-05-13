@@ -20,7 +20,7 @@ function SEO({ title, description }: Props) {
 
       <meta property="og:image" content="/preview.webp" />
 
-      <meta property="og:url" content="https://yourdomain.com" />
+      <meta property="og:url" content="https://imkepaps.com" />
 
       <meta name="twitter:card" content="summary_large_image" />
     </Helmet>
