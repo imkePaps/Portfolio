@@ -2,6 +2,16 @@
 
 A modern fullstack developer portfolio built to showcase projects, technical skills and interactive frontend experiences through smooth animations, immersive visuals and scalable architecture.
 
+![Preview](./frontend/public/preview.webp)
+
+---
+
+## Live Demo
+
+https://imkepaps.com 
+
+---
+
 ## ✨ Features
 
 - Responsive modern UI
