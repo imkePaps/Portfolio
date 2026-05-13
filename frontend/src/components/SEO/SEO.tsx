@@ -7,7 +7,7 @@ type Props = {
 
 function SEO({ title, description }: Props) {
   return (
-    <Helmet titleTemplate="%s | Imke Paps" defaultTitle="Imke Paps">
+    <Helmet titleTemplate="Imke Paps " defaultTitle="Imke Paps">
       <title>{title}</title>
 
       <meta name="description" content={description} />
