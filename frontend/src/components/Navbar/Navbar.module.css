@@ -247,7 +247,7 @@
 }
 
 /* TABLET */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .container {
     padding: 0 20px;
   }
@@ -258,7 +258,7 @@
 }
 
 /* MOBILE */
-@media (max-width: 480px) {
+@media (max-width: 850px) {
   .logo {
     gap: 12px;
   
