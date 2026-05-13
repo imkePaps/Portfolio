@@ -12,7 +12,6 @@ const skills = [
   "CSS Modules",
   "Responsive Design",
   "Git",
-  "Three.js",
   "Creative Cloud",
   "Photoshop",
   "SQL",
