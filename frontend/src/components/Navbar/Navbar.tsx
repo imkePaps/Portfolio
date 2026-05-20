@@ -14,72 +14,72 @@ function Navbar() {
   /* -------------------------------- */
   /* ACTIVE SECTION TRACKING */
   /* -------------------------------- */
-useEffect(() => {
-  if (isStaticPage) return;
+  useEffect(() => {
+    if (isStaticPage) return;
 
-  const sectionIds = [
-    "home",
-    "projects",
-    "about",
-    "skills",
-    "experience",
-    "contact",
-  ];
+    const sectionIds = [
+      "home",
+      "projects",
+      "about",
+      "skills",
+      "experience",
+      "contact",
+    ];
 
-  let ticking = false;
+    let ticking = false;
 
-  const updateSection = () => {
-    let current = "home";
+    const updateSection = () => {
+      let current = "home";
 
-    for (const id of sectionIds) {
-      const section = document.getElementById(id);
+      for (const id of sectionIds) {
+        const section = document.getElementById(id);
 
-      if (!section) continue;
+        if (!section) continue;
 
-      const rect = section.getBoundingClientRect();
+        const rect = section.getBoundingClientRect();
 
-      if (
-        rect.top <= window.innerHeight * 0.35 &&
-        rect.bottom >= window.innerHeight * 0.35
-      ) {
-        current = id;
-        break;
+        if (
+          rect.top <= window.innerHeight * 0.35 &&
+          rect.bottom >= window.innerHeight * 0.35
+        ) {
+          current = id;
+          break;
+        }
       }
-    }
 
-    setActiveSection(current);
+      setActiveSection(current);
 
-    ticking = false;
-  };
+      ticking = false;
+    };
 
-  const handleScroll = () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        updateSection();
-      });
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateSection();
+        });
 
-      ticking = true;
-    }
-  };
+        ticking = true;
+      }
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", updateSection);
-  window.addEventListener("load", updateSection);
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", updateSection);
+    window.addEventListener("load", updateSection);
 
-  const timeout1 = setTimeout(updateSection, 100);
-  const timeout2 = setTimeout(updateSection, 500);
+    const timeout1 = setTimeout(updateSection, 100);
+    const timeout2 = setTimeout(updateSection, 500);
 
-  updateSection();
+    updateSection();
 
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-    window.removeEventListener("resize", updateSection);
-    window.removeEventListener("load", updateSection);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updateSection);
+      window.removeEventListener("load", updateSection);
 
-    clearTimeout(timeout1);
-    clearTimeout(timeout2);
-  };
-}, [isStaticPage]);
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+    };
+  }, [isStaticPage]);
 
   /* -------------------------------- */
   /* NAVBAR BACKGROUND */
@@ -108,9 +108,7 @@ useEffect(() => {
   return (
     <>
       <header
-        className={`${styles.navbar} ${
-          isScrolled ? styles.scrolled : ""
-        }`}
+        className={`${styles.navbar} ${isScrolled ? styles.scrolled : ""}`}
       >
         <div className={styles.container}>
           <Link to="/" className={styles.logo}>
@@ -130,11 +128,7 @@ useEffect(() => {
               <>
                 <a
                   href="#home"
-                  className={
-                    activeSection === "home"
-                      ? styles.activeLink
-                      : ""
-                  }
+                  className={activeSection === "home" ? styles.activeLink : ""}
                 >
                   Home
                 </a>
@@ -142,9 +136,7 @@ useEffect(() => {
                 <a
                   href="#projects"
                   className={
-                    activeSection === "projects"
-                      ? styles.activeLink
-                      : ""
+                    activeSection === "projects" ? styles.activeLink : ""
                   }
                 >
                   Projects
@@ -152,11 +144,7 @@ useEffect(() => {
 
                 <a
                   href="#about"
-                  className={
-                    activeSection === "about"
-                      ? styles.activeLink
-                      : ""
-                  }
+                  className={activeSection === "about" ? styles.activeLink : ""}
                 >
                   About
                 </a>
@@ -164,9 +152,7 @@ useEffect(() => {
                 <a
                   href="#skills"
                   className={
-                    activeSection === "skills"
-                      ? styles.activeLink
-                      : ""
+                    activeSection === "skills" ? styles.activeLink : ""
                   }
                 >
                   Skills
@@ -175,9 +161,7 @@ useEffect(() => {
                 <a
                   href="#experience"
                   className={
-                    activeSection === "experience"
-                      ? styles.activeLink
-                      : ""
+                    activeSection === "experience" ? styles.activeLink : ""
                   }
                 >
                   Experience
@@ -186,9 +170,7 @@ useEffect(() => {
                 <a
                   href="#contact"
                   className={
-                    activeSection === "contact"
-                      ? styles.activeLink
-                      : ""
+                    activeSection === "contact" ? styles.activeLink : ""
                   }
                 >
                   Contact
@@ -198,9 +180,7 @@ useEffect(() => {
           </nav>
 
           <button
-            className={`${styles.menuButton} ${
-              isOpen ? styles.active : ""
-            }`}
+            className={`${styles.menuButton} ${isOpen ? styles.active : ""}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
@@ -214,9 +194,7 @@ useEffect(() => {
 
       {/* OVERLAY */}
       <div
-        className={`${styles.overlay} ${
-          isOpen ? styles.overlayVisible : ""
-        }`}
+        className={`${styles.overlay} ${isOpen ? styles.overlayVisible : ""}`}
         onClick={() => setIsOpen(false)}
       />
 
@@ -235,9 +213,7 @@ useEffect(() => {
             <a
               href="#home"
               className={
-                activeSection === "home"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "home" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -247,9 +223,7 @@ useEffect(() => {
             <a
               href="#projects"
               className={
-                activeSection === "projects"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "projects" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -259,9 +233,7 @@ useEffect(() => {
             <a
               href="#about"
               className={
-                activeSection === "about"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "about" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -271,9 +243,7 @@ useEffect(() => {
             <a
               href="#skills"
               className={
-                activeSection === "skills"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "skills" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -283,9 +253,7 @@ useEffect(() => {
             <a
               href="#experience"
               className={
-                activeSection === "experience"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "experience" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >
@@ -295,9 +263,7 @@ useEffect(() => {
             <a
               href="#contact"
               className={
-                activeSection === "contact"
-                  ? styles.activeMobileLink
-                  : ""
+                activeSection === "contact" ? styles.activeMobileLink : ""
               }
               onClick={() => setIsOpen(false)}
             >

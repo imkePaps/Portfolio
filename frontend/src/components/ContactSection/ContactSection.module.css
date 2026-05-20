@@ -37,17 +37,16 @@
 }
 
 @media (max-width: 768px) {
-  .container p:first-child, 
+  .container p:first-child,
   .container h2,
   .description {
     text-align: left;
   }
 
   .actions {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    gap: var(--space-sm); 
-  } 
-
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
 }

@@ -13,19 +13,14 @@ function Particles() {
   const particles = useMemo(() => {
     const COUNT = 250;
 
-    const positions = new Float32Array(
-      COUNT * 3
-    );
+    const positions = new Float32Array(COUNT * 3);
 
     for (let i = 0; i < COUNT; i++) {
-      positions[i * 3] =
-        (Math.random() - 0.5) * 14;
+      positions[i * 3] = (Math.random() - 0.5) * 14;
 
-      positions[i * 3 + 1] =
-        (Math.random() - 0.5) * 10;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
 
-      positions[i * 3 + 2] =
-        (Math.random() - 0.5) * 5;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 5;
     }
 
     return positions;
@@ -37,21 +32,16 @@ function Particles() {
   useFrame((_, delta) => {
     if (!pointsRef.current) return;
 
-    pointsRef.current.rotation.y +=
-      delta * 0.02;
+    pointsRef.current.rotation.y += delta * 0.02;
 
     pointsRef.current.rotation.x =
-      Math.sin(performance.now() * 0.00005)
-      * 0.015;
+      Math.sin(performance.now() * 0.00005) * 0.015;
   });
 
   return (
     <points ref={pointsRef}>
       <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          args={[particles, 3]}
-        />
+        <bufferAttribute attach="attributes-position" args={[particles, 3]} />
       </bufferGeometry>
 
       <pointsMaterial
