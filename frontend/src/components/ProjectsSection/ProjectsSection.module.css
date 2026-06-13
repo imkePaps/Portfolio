@@ -108,6 +108,7 @@
 
   .controls {
     gap: 6px;
+     top: 8px;
   }
 
   .prev,
