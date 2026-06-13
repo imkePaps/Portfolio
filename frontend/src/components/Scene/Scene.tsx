@@ -9,38 +9,38 @@ function Scene() {
 
   const [isMobile, setIsMobile] = useState(false);
 
+  const [isVisible, setIsVisible] = useState(true);
+
+  const [isTabVisible, setIsTabVisible] = useState(true);
+
+  /*
+   * MOBILE DETECTION
+   */
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const handleChange = () => {
+      setIsMobile(mediaQuery.matches);
     };
 
-    handleResize();
+    handleChange();
 
-    window.addEventListener("resize", handleResize);
+    mediaQuery.addEventListener("change", handleChange);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      mediaQuery.removeEventListener("change", handleChange);
     };
   }, []);
 
+  /*
+   * VIEWPORT VISIBILITY
+   */
   useEffect(() => {
     if (!containerRef.current) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const canvas = containerRef.current?.querySelector("canvas");
-
-        if (!canvas) return;
-
-        if (!entry.isIntersecting) {
-          canvas.style.opacity = "0";
-
-          canvas.style.pointerEvents = "none";
-        } else {
-          canvas.style.opacity = "1";
-
-          canvas.style.pointerEvents = "auto";
-        }
+        setIsVisible(entry.isIntersecting);
       },
       {
         threshold: 0.1,
@@ -54,17 +54,36 @@ function Scene() {
     };
   }, []);
 
-  /* DISABLE R3F ON MOBILE */
+  /*
+   * TAB VISIBILITY
+   */
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsTabVisible(!document.hidden);
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
+  /*
+   * DISABLE ON MOBILE
+   */
   if (isMobile) {
     return null;
   }
+
+  const shouldRender = isVisible && isTabVisible;
 
   return (
     <div ref={containerRef}>
       <Suspense fallback={null}>
         <Canvas
           dpr={[1, 1.5]}
-          frameloop="always"
+          frameloop={shouldRender ? "always" : "demand"}
           gl={{
             antialias: false,
             powerPreference: "high-performance",

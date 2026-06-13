@@ -108,7 +108,7 @@
 }
 
 .tech {
-  margin-top: auto; 
+  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -198,6 +198,6 @@
   .description p {
     display: -webkit-box;
     line-clamp: 2;
-    -webkit-line-clamp: 2; 
+    -webkit-line-clamp: 2;
   }
 }

@@ -7,8 +7,11 @@ import { Points } from "three";
 function Particles() {
   const pointsRef = useRef<Points>(null!);
 
+  /*
+   * PARTICLE POSITIONS
+   */
   const particles = useMemo(() => {
-    const COUNT = 500;
+    const COUNT = 250;
 
     const positions = new Float32Array(COUNT * 3);
 
@@ -23,14 +26,16 @@ function Particles() {
     return positions;
   }, []);
 
-  useFrame((state) => {
+  /*
+   * ANIMATION
+   */
+  useFrame((_, delta) => {
     if (!pointsRef.current) return;
 
-    const time = state.clock.elapsedTime;
+    pointsRef.current.rotation.y += delta * 0.02;
 
-    pointsRef.current.rotation.y = time * 0.008;
-
-    pointsRef.current.rotation.x = Math.sin(time * 0.08) * 0.02;
+    pointsRef.current.rotation.x =
+      Math.sin(performance.now() * 0.00005) * 0.015;
   });
 
   return (
@@ -43,7 +48,7 @@ function Particles() {
         size={0.03}
         color="#ffffff"
         transparent
-        opacity={0.6}
+        opacity={0.5}
         sizeAttenuation
         depthWrite={false}
       />

@@ -13,9 +13,17 @@ function HomePage() {
   return (
     <>
       <SEO
-        title="Imke Paps"
-        description="Modern portfolio showcasing fullstack development, interactive UI, React applications and scalable frontend architecture."
-      />
+      title="Fullstack Developer"
+      description="Portfolio van Imke Paps, fullstack developer gespecialiseerd in React, TypeScript en moderne web experiences."
+      keywords={[
+        "fullstack developer",
+        "react developer",
+        "typescript developer",
+        "web developer belgium",
+        "creative developer",
+        "portfolio",
+      ]}
+    />
       <Hero />
 
       <FadeIn>

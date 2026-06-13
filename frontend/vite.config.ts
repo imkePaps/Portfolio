@@ -1,8 +1,20 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+import sitemap from "vite-plugin-sitemap";
+import { projects } from "./src/data/projects";
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(),
+     sitemap({
+      hostname: "https://imkepaps.com",
+      dynamicRoutes: projects.map(
+        (project) =>
+          `/projects/${project.slug}`
+      ),
+    }),
+  ],
+  
   build: {
     rollupOptions: {
       output: {
