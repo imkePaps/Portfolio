@@ -1,29 +1,30 @@
 import type { ReactNode } from "react";
-
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 type Props = {
   children: ReactNode;
   delay?: number;
+  y?: number;
 };
 
-function FadeIn({ children, delay = 0 }: Props) {
+function FadeIn({ children, delay = 0, y = 10 }: Props) {
+  const reduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
+      initial={
+        reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y }
+      }
+      whileInView={
+        { opacity: 1, y: 0 }
+      }
       viewport={{
         once: true,
-        amount: 0.2,
+        amount: 0.05, 
+        margin: "-10% 0px -10% 0px", 
       }}
       transition={{
-        duration: 0.6,
+        duration: 0.5,
         delay,
         ease: "easeOut",
       }}
