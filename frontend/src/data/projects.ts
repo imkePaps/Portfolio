@@ -1,5 +1,68 @@
 export const projects = [
   {
+    slug: "alexxia-fall",
+
+    title: "Alexxia Fall Website",
+
+    year: "06-2026",
+
+    description:
+      "A full-stack VTuber platform with fan interaction features, content management and an admin-driven ecosystem including fanart uploads, blogs, commissions and a merch store.",
+
+    longDescription: `
+A fully interactive full-stack platform built for a VTuber brand, designed to manage both community interaction and content distribution within a single scalable system.
+
+The application includes a fanart submission system, blog functionality, commission handling, a merch storefront and a structured contact and about experience, all tied together through a cohesive user interface.
+At the moment the commissions page and the shop is still hidden as it has a certain release date, but the rest of the website is fully functional and live.
+A major focus of the project was the development of a powerful admin panel, allowing full control over platform content including announcements, scheduling and community-facing updates.
+
+On the backend, a C#-based architecture was used to handle data management, authentication and business logic, enabling a scalable and maintainable system capable of supporting multiple dynamic content types.
+
+The project emphasizes modular design, extensibility and real-world platform architecture rather than a traditional static website approach.
+`,
+
+    technologies: ["React", "TypeScript", "C#", "React Three Fiber"],
+
+    live: "https://alexxia-fall.com",
+
+    images: [
+      "/projects/alexxia-fall/alexxia-fall.webp",
+      "/projects/alexxia-fall/alexxia-fall1.webp",
+      "/projects/alexxia-fall/alexxia-fall3.webp",
+    ],
+  },
+  {
+    slug: "mizu-landing",
+
+    title: "MizuRelictus landing page",
+
+    year: "05-2026",
+
+    description:
+      "A themed VTuber landing page designed to showcase the character’s identity, lore and artwork through an immersive, visually driven experience with smooth interactions and a focused narrative layout.",
+
+    longDescription: `
+    A custom VTuber landing page built to present a digital persona through a clean yet immersive web experience.
+
+The website was designed around the character’s identity, combining an about section, visual storytelling and an art gallery to highlight illustrations and personality in a structured way.
+
+The focus was on creating a strong atmospheric feel while keeping the interface minimal and easy to navigate, ensuring that the character and artwork remain the central focus.
+
+Built with a component-based React architecture, the project emphasizes responsive design, smooth transitions and a visually cohesive layout that adapts across desktop and mobile devices.
+`,
+
+    technologies: ["React", "TypeScript"],
+
+
+    live: "https://mizurelictus.com",
+
+    images: [
+      "/projects/mizu-landing/mizu-landing.webp",
+      "/projects/mizu-landing/mizu-landing1.webp",
+      "/projects/mizu-landing/mizu-landing3.webp",
+    ],
+  },
+  {
     slug: "portfolio-website",
 
     title: "Portfolio Website",

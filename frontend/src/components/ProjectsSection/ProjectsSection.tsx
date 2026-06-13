@@ -1,4 +1,9 @@
-import { motion } from "framer-motion";
+import { Navigation, Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+
 import Section from "../Section/Section";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import styles from "./ProjectsSection.module.css";
@@ -10,47 +15,41 @@ function ProjectsSection() {
     <Section id="projects">
       <div className={styles.header}>
         <p>PROJECTS</p>
-
         <h2>Selected work</h2>
+
+        {/* navigation buttons */}
+        <div className={styles.controls}>
+          <button className={`swiper-prev ${styles.prev}`}>←</button>
+          <button className={`swiper-next ${styles.next}`}>→</button>
+        </div>
 
         <span className={styles.blur} />
       </div>
 
-      <motion.div
-        className={styles.grid}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{
-          once: true,
-          amount: 0.2,
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={24}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
         }}
-        variants={{
-          hidden: {},
-          visible: {
-            transition: {
-              staggerChildren: 0.12,
-            },
+        navigation={{
+          nextEl: ".swiper-next",
+          prevEl: ".swiper-prev",
+        }}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
           },
         }}
       >
         {projects.map((project) => (
-          <motion.div
-            key={project.title}
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: 40,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-              },
-            }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-            }}
-          >
+          <SwiperSlide key={project.title}>
             <Link to={`/projects/${project.slug}`}>
               <ProjectCard
                 title={project.title}
@@ -60,9 +59,9 @@ function ProjectsSection() {
                 image={project.images?.[0]}
               />
             </Link>
-          </motion.div>
+          </SwiperSlide>
         ))}
-      </motion.div>
+      </Swiper>
     </Section>
   );
 }

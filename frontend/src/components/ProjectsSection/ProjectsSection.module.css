@@ -2,6 +2,11 @@
   position: relative;
 
   margin-bottom: var(--space-xl);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
 }
 
 .header p {
@@ -23,6 +28,14 @@
   letter-spacing: -0.04em;
 }
 
+.controls {
+  position: absolute;
+  top: 50px;
+  right: 0;
+
+  display: flex;
+  gap: 8px;
+}
 .blur {
   position: absolute;
   top: -40px;
@@ -53,10 +66,55 @@
   gap: var(--space-md);
 }
 
+.prev,
+.next {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+
+  color: var(--color-text);
+  font-size: 18px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.prev:active,
+.next:active {
+  transform: translateY(0px);
+}
+
 /* TABLET */
 @media (max-width: 768px) {
   .header {
     margin-bottom: var(--space-lg);
+  }
+
+  .controls {
+    gap: 6px;
+  }
+
+  .prev,
+  .next {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
   }
 }
 
