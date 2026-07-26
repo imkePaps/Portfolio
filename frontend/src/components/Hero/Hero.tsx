@@ -29,9 +29,9 @@ function Hero() {
 
           <div className={styles.actions}>
             <Magnetic>
-              <a href="#projects">
-                <Button text="View Projects" />
-              </a>
+            <a href="/cv.pdf" download="CV.pdf">
+              <Button text="Download CV" />
+            </a>
             </Magnetic>
 
             <Magnetic>

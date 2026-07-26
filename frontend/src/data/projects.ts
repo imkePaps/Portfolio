@@ -1,5 +1,38 @@
 export const projects = [
   {
+    slug: "whalleythefirst",
+
+    title: "Whalley The First portfolio",
+
+    year: "07-2026",
+
+    description:
+      "A portfolio website created for a video editor. It is created in the style they wanted to go for, clean and easy to navigate.",
+
+    longDescription: `
+Whalley The First is a custom portfolio website built for a video editor, with a strong focus on presenting his work in a clean, modern and visually engaging way.
+
+The website was designed around the client's preferred style while keeping the overall experience simple and easy to navigate. Alongside his professional work, the site includes a personal introduction that gives visitors a better sense of who he is, with dedicated attention to his presence as a streamer.
+
+A dedicated projects section showcases his video edits and short-form content, supported by client reviews that provide additional context to his work. The website also includes pricing information and a frequently asked questions section, giving potential clients easy access to the information they need.
+
+For the contact experience, I integrated EmailJS to allow visitors to get in touch directly through the website. Messages are delivered to the client through a custom email template designed to match the visual identity of the portfolio.
+
+I built the project using React and TypeScript, with custom CSS handling the styling, responsive layout and visual details. Throughout development, I focused on creating a smooth experience across different screen sizes while maintaining the clean aesthetic of the original design direction.
+
+The result is a lightweight and responsive portfolio that brings the client's work, personality and services together in one place, giving potential clients an easy way to discover his work and get in touch.
+`,
+
+    technologies: ["React", "TypeScript", "Css"],
+
+    live: " https://2523eef3.waldo-portfolio.pages.dev",
+    images: [
+      "/projects/waldo/waldo.webp",
+      "/projects/waldo/waldo1.webp",
+      "/projects/waldo/waldo2.webp",
+    ],
+  },
+  {
     slug: "alexxia-fall",
 
     title: "Alexxia Fall Website",
