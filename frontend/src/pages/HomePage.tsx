@@ -4,6 +4,7 @@ import AboutSection from "../components/AboutSection/AboutSection";
 import SkillsSection from "../components/SkillsSection/SkillsSection";
 import ContactSection from "../components/ContactSection/ContactSection";
 import Footer from "../components/Footer/Footer";
+import AboutMeSection from "../components/AboutMeSection/AboutMeSection";
 
 import FadeIn from "../components/FadeIn/FadeIn";
 import ExperienceSection from "../components/ExperienceSection/ExperienceSection";
@@ -28,6 +29,10 @@ function HomePage() {
 
       <FadeIn>
         <ProjectsSection />
+      </FadeIn>
+
+      <FadeIn delay={0.15}>
+        <AboutMeSection />
       </FadeIn>
 
       <FadeIn delay={0.1}>
