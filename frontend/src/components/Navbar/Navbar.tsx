@@ -11,18 +11,13 @@ function Navbar() {
 
   const isStaticPage = location.pathname !== "/";
 
-  /* -------------------------------- */
-  /* ACTIVE SECTION TRACKING */
-  /* -------------------------------- */
   useEffect(() => {
     if (isStaticPage) return;
 
-    // Aangepast naar de exacte volgorde op de HomePage
     const sectionIds = [
       "home",
       "projects",
       "aboutMe",
-      "about",
       "skills",
       "experience",
       "contact",
@@ -144,14 +139,7 @@ function Navbar() {
                     activeSection === "aboutMe" ? styles.activeLink : ""
                   }
                 >
-                  About Me
-                </a>
-
-                <a
-                  href="#about"
-                  className={activeSection === "about" ? styles.activeLink : ""}
-                >
-                  About
+                  About 
                 </a>
 
                 <a

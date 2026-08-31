@@ -1,46 +1,34 @@
 import Section from "../Section/Section";
-
 import styles from "./AboutMeSection.module.css";
 
 const values = [
   {
-    title: "Curiosity",
-    text: "I'm naturally curious and always want to understand how and why things work. That curiosity pushes me to explore new technologies, ask better questions and keep learning along the way.",
+    title: "Curiosity & Growth",
+    text: "Naturally curious and driven by persistence. I'm always looking to understand how things work, explore new technologies, and continuously improve through hands-on learning.",
   },
-
   {
-    title: "Creativity",
-    text: "I enjoy looking beyond the obvious and finding creative ways to turn ideas into digital experiences. I believe technology should not only solve a problem, but also create something that feels unique and engaging.",
+    title: "Creativity & UX",
+    text: "I enjoy finding creative ways to turn complex ideas into refined digital experiences. Technology should not only solve a problem, but also feel unique, engaging, and intuitive.",
   },
-
   {
-    title: "Growth",
-    text: "Every project is an opportunity to learn something new, challenge myself and become better at what I do. I'm always looking for ways to improve my skills, my approach and the quality of what I build.",
+    title: "Performance & Craftsmanship",
+    text: "Clean code, scalable architecture, and attention to detail are key. I focus on building efficient solutions that function smoothly and feel polished from start to finish.",
   },
-
-  {
-    title: "Performance",
-    text: "I care about creating experiences that work efficiently and smoothly, not just ones that look good. Clean code, thoughtful architecture and performance are important to me because a great experience should feel effortless to use.",
-  },
-
-  {
-    title: "Craftsmanship",
-    text: "I pay attention to the details that bring a digital experience together, from the way something functions to how it looks and feels. My goal is to create work that feels polished, intentional and something both the client and I can be proud of.",
-  },
-
-  {
-    title: "Client Focus",
-    text: "I want the final result to reflect what the client actually had in mind, while also bringing my own technical and creative perspective to the table. Understanding the goal behind a project helps me build something that is not only functional, but genuinely useful and valuable.",
-  },
-
-  {
-    title: "Reliability",
-    text: "For me, a project is only successful when everything works as it should. I care about building reliable, fully operational solutions that can be trusted in the real world, not just something that looks good in a demo.",
-  },
-
   {
     title: "Problem Solving",
-    text: "I enjoy breaking down complex problems and finding practical solutions that make sense. Whether it's a technical challenge or figuring out how to turn an idea into reality, I approach problems with patience, structure and persistence.",
+    text: "I enjoy breaking down complex challenges into practical, structured solutions. Whether it's a technical obstacle or an abstract concept, I tackle it with patience and focus.",
+  },
+  {
+    title: "Leadership & Organization",
+    text: "Built on a strong foundation of communication, planning, and teamwork developed through both technical roles and direct customer-facing experience.",
+  },
+  {
+    title: "Client Focus & Ownership",
+    text: "I take full initiative to ensure the final result reflects the client's vision, bringing technical expertise to deliver reliable, high-quality results that create real value.",
+  },
+  {
+    title: "Reliability",
+    text: "A project is only successful when everything works seamlessly. I focus on building robust, fully operational solutions that stand up to real-world use.",
   },
 ];
 
@@ -52,7 +40,7 @@ function AboutMeSection() {
 
         <div className={styles.heading}>
           <h2>
-            Behind the code is
+            Creating scalable digital experiences with
             <span> a curious mind.</span>
           </h2>
         </div>
@@ -60,31 +48,29 @@ function AboutMeSection() {
         <div className={styles.content}>
           <div className={styles.intro}>
             <p>
-              I'm Imke, a fullstack developer who genuinely enjoys figuring
-              things out, learning new things and turning ideas into something
-              tangible.
+              I'm Imke, a fullstack developer focused on building modern web
+              applications with clean architecture, refined user interfaces, and
+              high performance.
             </p>
           </div>
 
           <div className={styles.story}>
             <p>
-              What drives me is the combination of technology, creativity and
-              problem-solving. I like understanding the bigger picture, but I
-              also enjoy getting lost in the details that make a product feel
-              polished and intentional.
+              What drives me is the intersection of technology, design, and
+              problem-solving. I enjoy understanding the bigger picture while
+              refining the smallest details that make a product feel intentional
+              and reliable.
             </p>
 
             <p>
-              I'm not someone who wants to stop learning once something works.
-              I'm curious by nature, and that curiosity pushes me to explore
-              new technologies, question existing solutions and continuously
-              improve the way I build.
+              I'm curious by nature and don't stop once code simply works.
+              I constantly question existing solutions, test new technologies,
+              and push myself through ambitious projects and continuous learning.
             </p>
 
             <p>
-              For me, development is not just about writing code. It's about
-              creating something useful, thoughtful and meaningful and
-              enjoying the process along the way.
+              For me, development goes beyond writing code—it's about building
+              thoughtful, functional, and meaningful solutions from start to finish.
             </p>
           </div>
         </div>
@@ -93,7 +79,6 @@ function AboutMeSection() {
           {values.map((value) => (
             <article key={value.title} className={styles.value}>
               <h3>{value.title}</h3>
-
               <p>{value.text}</p>
             </article>
           ))}

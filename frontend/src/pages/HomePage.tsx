@@ -1,6 +1,5 @@
 import Hero from "../components/Hero/Hero";
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection";
-import AboutSection from "../components/AboutSection/AboutSection";
 import SkillsSection from "../components/SkillsSection/SkillsSection";
 import ContactSection from "../components/ContactSection/ContactSection";
 import Footer from "../components/Footer/Footer";
@@ -33,10 +32,6 @@ function HomePage() {
 
       <FadeIn delay={0.15}>
         <AboutMeSection />
-      </FadeIn>
-
-      <FadeIn delay={0.1}>
-        <AboutSection />
       </FadeIn>
 
       <FadeIn delay={0.15}>
