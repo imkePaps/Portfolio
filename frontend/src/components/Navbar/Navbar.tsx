@@ -229,17 +229,7 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               About Me
-            </a>
-
-            <a
-              href="#about"
-              className={
-                activeSection === "about" ? styles.activeMobileLink : ""
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </a>
+            </a>          
 
             <a
               href="#skills"
