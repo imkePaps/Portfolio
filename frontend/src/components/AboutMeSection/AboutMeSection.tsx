@@ -46,7 +46,7 @@ const values = [
 
 function AboutMeSection() {
   return (
-    <Section id="about-me">
+    <Section id="aboutMe">
       <div className={styles.container}>
         <p className={styles.label}>A LITTLE MORE ABOUT ME</p>
 
@@ -104,4 +104,3 @@ function AboutMeSection() {
 }
 
 export default AboutMeSection;
-

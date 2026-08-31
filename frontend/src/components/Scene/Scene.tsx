@@ -8,9 +8,7 @@ function Scene() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [isMobile, setIsMobile] = useState(false);
-
   const [isVisible, setIsVisible] = useState(true);
-
   const [isTabVisible, setIsTabVisible] = useState(true);
 
   /*
@@ -79,7 +77,19 @@ function Scene() {
   const shouldRender = isVisible && isTabVisible;
 
   return (
-    <div ref={containerRef}>
+    <div
+      ref={containerRef}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        pointerEvents: "none",
+        zIndex: -1,
+        overflow: "hidden",
+      }}
+    >
       <Suspense fallback={null}>
         <Canvas
           dpr={[1, 1.5]}
@@ -92,9 +102,9 @@ function Scene() {
             position: [0, 0, 5],
             fov: 45,
           }}
+          style={{ width: "100%", height: "100%" }}
         >
           <Aurora />
-
           <Particles />
         </Canvas>
       </Suspense>

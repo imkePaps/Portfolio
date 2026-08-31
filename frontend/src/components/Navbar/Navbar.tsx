@@ -17,9 +17,11 @@ function Navbar() {
   useEffect(() => {
     if (isStaticPage) return;
 
+    // Aangepast naar de exacte volgorde op de HomePage
     const sectionIds = [
       "home",
       "projects",
+      "aboutMe",
       "about",
       "skills",
       "experience",
@@ -81,9 +83,6 @@ function Navbar() {
     };
   }, [isStaticPage]);
 
-  /* -------------------------------- */
-  /* NAVBAR BACKGROUND */
-  /* -------------------------------- */
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
@@ -98,9 +97,6 @@ function Navbar() {
     };
   }, []);
 
-  /* -------------------------------- */
-  /* CLOSE MOBILE MENU ON ROUTE CHANGE */
-  /* -------------------------------- */
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
@@ -140,6 +136,15 @@ function Navbar() {
                   }
                 >
                   Projects
+                </a>
+
+                <a
+                  href="#aboutMe"
+                  className={
+                    activeSection === "aboutMe" ? styles.activeLink : ""
+                  }
+                >
+                  About Me
                 </a>
 
                 <a
@@ -192,13 +197,11 @@ function Navbar() {
         </div>
       </header>
 
-      {/* OVERLAY */}
       <div
         className={`${styles.overlay} ${isOpen ? styles.overlayVisible : ""}`}
         onClick={() => setIsOpen(false)}
       />
 
-      {/* MOBILE MENU */}
       <aside
         className={`${styles.mobileMenu} ${
           isOpen ? styles.mobileMenuOpen : ""
@@ -228,6 +231,16 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Projects
+            </a>
+
+            <a
+              href="#aboutMe"
+              className={
+                activeSection === "aboutMe" ? styles.activeMobileLink : ""
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              About Me
             </a>
 
             <a
